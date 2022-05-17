@@ -1,0 +1,16 @@
+
+<div>
+  <h1>:NEW GAME:</h1>
+  <ol class="list-group d-inline">
+    <% @letters.each do |letter| %>
+      <li class="list-group-item-primary d-inline-flex p-3 m-1"><%= letter %></li>
+    <% end %>
+  </ol>
+
+
+  <form action="/score" method="post" data-turbo="false">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="text" name="approach" placeholder="Type your word in here?">
+    <input type="submit" value="PLAY!">
+  </form>
+</div>
